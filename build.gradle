@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+def groovyVersion = '2.1.5'
+def spockVersion = '0.7-groovy-2.0'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+
+test {
+    exclude '**/FakeTest.class'
+    systemProperty 'project.buildDir', project.buildDir
+    testLogging.showStandardStreams = true
+    beforeTest { descriptor ->
+        logger.lifecycle( "Running test: " + descriptor )
+    }
+}
+
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
+    testCompile "org.spockframework:spock-core:${spockVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'com.athaydes', name: 'spock-reports', version: '1.2-SNAPSHOT'
+}
