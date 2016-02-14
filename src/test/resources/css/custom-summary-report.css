@@ -1,0 +1,42 @@
+body {
+    font-family: Helvetica;
+}
+
+table {
+    margin: 5px;
+}
+
+div.date-test-ran {
+    font-size: small;
+    font-style: italic;
+}
+
+table.summary-table {
+    width: 800px;
+    text-align: left;
+    font-weight: bold;
+    font-size: small;
+}
+
+table.summary-table th {
+    background: greenyellow;
+    padding: 6px;
+}
+
+table.summary-table td {
+    background: lightgoldenrodyellow;
+    padding: 6px;
+}
+
+tr.error td, td.error {
+    background-color: orangered !important;
+}
+
+tr.failure td, td.failure {
+    color: orange;
+}
+
+div.footer {
+    text-align: center;
+    font-size: small;
+}
